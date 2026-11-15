@@ -1,5 +1,10 @@
-<?php $items = ["Malai cha" => 40, "Lebu cha" => 25, "Singara" => 15]; ?>
-<!doctype html><html><head><meta charset="utf-8"><title>Menu</title></head>
-<body style="font-family:system-ui;max-width:40rem;margin:4rem auto"><h1>Menu</h1><ul>
-<?php foreach ($items as $n => $p): ?><li><?= htmlspecialchars($n) ?>: ৳<?= $p ?></li><?php endforeach; ?>
-</ul><p><a href="/">Home</a></p></body></html>
+<?php $items = [["🍵", "Malai cha", 40], ["🍋", "Lebu cha", 25], ["🫖", "Seven-layer cha", 120], ["🥟", "Singara", 15], ["🥯", "Puri", 10], ["🍪", "Biscuit", 5]]; ?>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menu · Cha Ghor</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/">🍵 Cha Ghor</a><nav><a href="/">Home</a><a href="/menu">Menu</a></nav></header>
+<main><h1>Menu</h1><div class="grid">
+<?php foreach ($items as [$e, $n, $p]): ?><div class="card"><div class="e"><?= $e ?></div><b><?= htmlspecialchars($n) ?></b><span>৳<?= $p ?></span></div><?php endforeach; ?>
+</div></main>
+<footer>/menu is a pretty URL rewritten by Apache's .htaccess</footer>
+</body></html>
